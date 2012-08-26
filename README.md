@@ -35,6 +35,7 @@
 
 
 ### RESTful API (assumes local deployment)
+
 ##### JSON URLs
 * [welcome page](http://localhost:8080/contacts-service/welcome)
 * [getAllContacts](http://localhost:8080/contacts-service/contact/all) **JSON**
@@ -42,6 +43,7 @@
 * [getContactsByLastName](http://localhost:8080/contacts-service/contact/l/$lastName)  **JSON**
 * [getContactsByAreaCode](http://localhost:8080/contacts-service/contact/ac/$areaCode) **JSON**
 * [getContact](http://localhost:8080/contacts-service/contact/id/$id) **JSON**
+
 ##### HTML CRUD Forms
 * [createContact](http://localhost:8080/contacts-service/contact/create) **FORM**
 * [updateContact](http://localhost:8080/contacts-service/contact/edit/$id) **FORM**
