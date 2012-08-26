@@ -16,9 +16,9 @@
 3. database should be accessible with a jdbc url like jdbc:postgresql://localhost:5433/contacts
 
 ### Getting Started
-1. first get the project building with "mvn clean install"
-2. try deploying with "mvn tomcat:run"
-3. visit the url [welcome](http://localhost:8080/contacts-service/welcome)
+1. first get the project building by navigating to your source directory and executing a "mvn clean install"
+2. try deploying by executing a "mvn tomcat:run"
+3. visit the url [welcome](http://localhost:8080/contacts-service/welcome) to see if it works
 
 ### Finished
 ##### Some final steps
@@ -30,3 +30,13 @@
 > * view contacts by firstname [here](http://localhost:8080/contacts-service/contact/f/Br)
 > * view contacts by lastname [here](http://localhost:8080/contacts-service/contact/l/Z)
 > * view contacts by area code [here](http://localhost:8080/contacts-service/contact/ac/415)
+
+### RESTful API (assumes local deployment)
+* [welcome page](http://localhost:8080/contacts-service/welcome)
+* [getAllContacts](http://localhost:8080/contacts-service/contact/all)
+* [getContactsByFirstName](http://localhost:8080/contacts-service/contact/f/$firstName)
+* [getContactsByLastName](http://localhost:8080/contacts-service/contact/l/$lastName)
+* [getContactsByAreaCode](http://localhost:8080/contacts-service/contact/ac/$areaCode)
+* [getContact](http://localhost:8080/contacts-service/contact/id/$id)
+* [updateContact](http://localhost:8080/contacts-service/contact) **POST**
+* [removeContact](http://localhost:8080/contacts-service/contact/remove) **POST**
