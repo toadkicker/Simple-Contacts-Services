@@ -35,4 +35,16 @@ public class ContactService {
     public List<Contact> getContactsByAreaCode(String areaCode) {
         return contactRepository.getContactsByAreaCode(areaCode);
     }
+
+    public Contact getContact(Long id) {
+        return contactRepository.getContact(id);
+    }
+
+    public void updateContact(Contact contact) {
+        contactRepository.updateContact(contact);
+    }
+
+    public void removeContact(Contact contact) {
+        contactRepository.removeContact(contact);
+    }
 }

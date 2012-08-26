@@ -30,13 +30,17 @@
 > * view contacts by firstname [here](http://localhost:8080/contacts-service/contact/f/Br)
 > * view contacts by lastname [here](http://localhost:8080/contacts-service/contact/l/Z)
 > * view contacts by area code [here](http://localhost:8080/contacts-service/contact/ac/415)
+> * add a new contact using a form page [here](http://localhost:8080/contacts-service/contact/new)
+> * update an existing contact using a form page [here](http://localhost:8080/contacts-service/contact/edit/1) (assumes 1 is your entity ID)
+
 
 ### RESTful API (assumes local deployment)
 * [welcome page](http://localhost:8080/contacts-service/welcome)
-* [getAllContacts](http://localhost:8080/contacts-service/contact/all)
-* [getContactsByFirstName](http://localhost:8080/contacts-service/contact/f/$firstName)
-* [getContactsByLastName](http://localhost:8080/contacts-service/contact/l/$lastName)
-* [getContactsByAreaCode](http://localhost:8080/contacts-service/contact/ac/$areaCode)
-* [getContact](http://localhost:8080/contacts-service/contact/id/$id)
-* [updateContact](http://localhost:8080/contacts-service/contact) **POST**
-* [removeContact](http://localhost:8080/contacts-service/contact/remove) **POST**
+* [getAllContacts](http://localhost:8080/contacts-service/contact/all) **JSON**
+* [getContactsByFirstName](http://localhost:8080/contacts-service/contact/f/$firstName) **JSON**
+* [getContactsByLastName](http://localhost:8080/contacts-service/contact/l/$lastName)  **JSON**
+* [getContactsByAreaCode](http://localhost:8080/contacts-service/contact/ac/$areaCode) **JSON**
+* [getContact](http://localhost:8080/contacts-service/contact/id/$id) **JSON**
+* [updateContact](http://localhost:8080/contacts-service/new) **FORM**
+* [updateContact](http://localhost:8080/contacts-service/edit/$id) **FORM**
+* [removeContact](http://localhost:8080/contacts-service/contact/remove) **FORM**

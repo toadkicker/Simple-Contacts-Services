@@ -40,4 +40,16 @@ public class ContactRepository {
     public List<Contact> getContactsByAreaCode(String areaCode) {
         return sessionFactory.getCurrentSession().createQuery("Select c From Contact c where c.areaCode = :areaCode").setParameter("areaCode", areaCode).list();
     }
+
+    public Contact getContact(Long id) {
+        return (Contact) sessionFactory.getCurrentSession().get(Contact.class, id);
+    }
+
+    public void updateContact(Contact contact) {
+        sessionFactory.getCurrentSession().update(contact);
+    }
+
+    public void removeContact(Contact contact) {
+        sessionFactory.getCurrentSession().delete(contact);
+    }
 }
