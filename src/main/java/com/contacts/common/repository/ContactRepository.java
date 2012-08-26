@@ -18,7 +18,7 @@ public class ContactRepository {
     @Autowired
     private SessionFactory sessionFactory;
 
-    public List<Contact> getContacts() {
+    public List getContacts() {
         return sessionFactory.getCurrentSession().createQuery("Select c From Contact c").list();
     }
 
@@ -29,15 +29,15 @@ public class ContactRepository {
         }
     }
 
-    public List<Contact> getContactsByFirstName(String firstName) {
+    public List getContactsByFirstName(String firstName) {
         return sessionFactory.getCurrentSession().createQuery("Select c From Contact c where c.firstName like :firstName").setParameter("firstName", firstName + "%").list();
     }
 
-    public List<Contact> getContactsByLastName(String lastName) {
+    public List getContactsByLastName(String lastName) {
         return sessionFactory.getCurrentSession().createQuery("Select c From Contact c where c.lastName like :lastName").setParameter("lastName", lastName + "%").list();
     }
 
-    public List<Contact> getContactsByAreaCode(String areaCode) {
+    public List getContactsByAreaCode(String areaCode) {
         return sessionFactory.getCurrentSession().createQuery("Select c From Contact c where c.areaCode = :areaCode").setParameter("areaCode", areaCode).list();
     }
 

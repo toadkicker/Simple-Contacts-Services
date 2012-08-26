@@ -64,7 +64,7 @@ public class ContactController {
         return contactService.getContact(Long.valueOf(id));
     }
 
-    @RequestMapping(value = "new", method = RequestMethod.GET)
+    @RequestMapping(value = "create", method = RequestMethod.GET)
     public String getNewContactForm(ModelMap modelMap) {
         modelMap.addAttribute("message", "complete form to add a new contact");
         modelMap.addAttribute("buttonMessage", "Add Contact");
@@ -86,13 +86,29 @@ public class ContactController {
         modelMap.addAttribute("message", "submit changes in order to update contact");
         modelMap.addAttribute("contact", updatedContact);
         modelMap.addAttribute("buttonMessage", "Update Contact");
-        modelMap.addAttribute("actionName", "update");
+        modelMap.addAttribute("actionName", "../edit");
         return "contact-form";
     }
 
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(value = "edit", method = RequestMethod.POST)
     public String getSubmitUpdate(@ModelAttribute("contact") Contact contact, BindingResult result, ModelMap modelMap) {
         contactService.updateContact(contact);
+        return "redirect:/contact/all";
+    }
+
+    @RequestMapping(value = "delete/{id}", method = RequestMethod.GET)
+    public String getDeleteContactForm(@PathVariable String id, ModelMap modelMap) {
+        Contact removedContact = contactService.getContact(Long.valueOf(id));
+        modelMap.addAttribute("message", "confirm removal. is this the correct contact to remove?");
+        modelMap.addAttribute("contact", removedContact);
+        modelMap.addAttribute("buttonMessage", "Remove Contact");
+        modelMap.addAttribute("actionName", "../delete");
+        return "contact-form";
+    }
+
+    @RequestMapping(value = "delete", method = RequestMethod.POST)
+    public String getSubmitDelete(@ModelAttribute("contact") Contact contact, BindingResult result, ModelMap modelMap) {
+        contactService.removeContact(contact);
         return "redirect:/contact/all";
     }
 
