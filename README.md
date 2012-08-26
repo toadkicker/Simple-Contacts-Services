@@ -30,8 +30,6 @@
 > * view contacts by firstname [here](http://localhost:8080/contacts-service/contact/f/Br)
 > * view contacts by lastname [here](http://localhost:8080/contacts-service/contact/l/Z)
 > * view contacts by area code [here](http://localhost:8080/contacts-service/contact/ac/415)
-> * add a new contact using a form page [here](http://localhost:8080/contacts-service/contact/new)
-> * update an existing contact using a form page [here](http://localhost:8080/contacts-service/contact/edit/1) (assumes 1 is your entity ID)
 
 
 ### RESTful API (assumes local deployment)
