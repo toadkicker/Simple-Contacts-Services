@@ -1,48 +1,30 @@
 # Simple-Contacts-Services
 
-### Spring 3 MVC Contacts Services
-
-> This page is under construction as of 8/25/2012
-> updates should be frequent
-
-### Prerequisites
+## Prerequisites
 * maven 2.2.1
 * java 1.6
 * postgres database
 
 ### Setup the database
 1. install postgres on your development machine
-2. create a database named "contacts" (in my case credentials for this connection are 'postgres' with password 'postgres')
-3. database should be accessible with a jdbc url like jdbc:postgresql://localhost:5433/contacts
+2. create a database named "contacts" (username 'postgres' with password 'postgres')
 
 ### Getting Started
-1. first get the project building by navigating to your source directory and executing a "mvn clean install"
-2. try deploying by executing a "mvn tomcat:run"
-3. visit the url [welcome](http://localhost:8080/contacts-service/welcome) to see if it works
+1. build the project.execute a "mvn clean install" in the source directory.
+2. from the source directory execute a "mvn tomcat:run"
+3. visit the [default page](http://localhost:8080/contacts-service/contacts)
 
-### Finished
-##### Some final steps
-> After you have deployed here is how you can test
-> * hit the helloworld page on [localhost](http://localhost:8080/contacts-service/welcome)
-> * view random non-persistent data [here](http://localhost:8080/contacts-service/contact/durpdurp)
-> * persist some test data by hitting the [url](http://localhost:8080/contacts-service/contact/test)(only loads once)
-> * view all persisted contacts [here](http://localhost:8080/contacts-service/contact/all)
-> * view contacts by firstname [here](http://localhost:8080/contacts-service/contact/f/Br)
-> * view contacts by lastname [here](http://localhost:8080/contacts-service/contact/l/Z)
-> * view contacts by area code [here](http://localhost:8080/contacts-service/contact/ac/415)
+#### API
+* to view all contacts [here](http://localhost:8080/contacts-service/contacts)
+* create a new contact [here](http://localhost:8080/contacts-service/contacts/create)
+* edit existing contact [here](http://localhost:8080/contacts-service/contacts/edit/$id) (replace $id with entity id)
+* delete existing contact [here](http://localhost:8080/contacts-service/contacts/delete/$id) (replace $id with entity id)
+* search by query parameter [here](http://localhost:8080/contacts-service/contacts/search)
+** firstName
+** lastName
+** emailAddress
+** areaCode
 
+an example search query would look like
+http://localhost:8080/contacts-service/contacts/search?firstName=John&lastName=Doe&emailAddress=foo@bar.com&areaCode=415
 
-### RESTful API (assumes local deployment)
-
-##### JSON URLs
-* [welcome page](http://localhost:8080/contacts-service/welcome)
-* [getAllContacts](http://localhost:8080/contacts-service/contact/all) **JSON**
-* [getContactsByFirstName](http://localhost:8080/contacts-service/contact/f/$firstName) **JSON**
-* [getContactsByLastName](http://localhost:8080/contacts-service/contact/l/$lastName)  **JSON**
-* [getContactsByAreaCode](http://localhost:8080/contacts-service/contact/ac/$areaCode) **JSON**
-* [getContact](http://localhost:8080/contacts-service/contact/id/$id) **JSON**
-
-##### HTML CRUD Forms
-* [createContact](http://localhost:8080/contacts-service/contact/create) **FORM**
-* [updateContact](http://localhost:8080/contacts-service/contact/edit/$id) **FORM**
-* [deleteContact](http://localhost:8080/contacts-service/contact/delete/$id) **FORM**

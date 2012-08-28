@@ -6,7 +6,7 @@
 
 <h3>${message}</h3>
 
-<form:form modelAttribute="contact" method="post" action="${actionName}">
+<form:form modelAttribute="contact" method="${actionMethod}" action="${actionName}">
 
     <table>
         <tr>
