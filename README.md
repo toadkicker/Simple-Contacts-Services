@@ -19,10 +19,10 @@
     * http://localhost:8080/contacts-service/contacts
 * create a new contact [here](http://localhost:8080/contacts-service/contacts/create)
     * http://localhost:8080/contacts-service/contacts/create
-* edit existing contact [here](http://localhost:8080/contacts-service/contacts/edit/$id) (replace $id with entity id)
-    * http://localhost:8080/contacts-service/contacts/edit/$id
-* delete existing contact [here](http://localhost:8080/contacts-service/contacts/delete/$id) (replace $id with entity id)
-    * http://localhost:8080/contacts-service/contacts/delete/$id
+* edit existing contact [here](http://localhost:8080/contacts-service/contacts/$id/edit) (replace $id with entity id)
+    * http://localhost:8080/contacts-service/contacts/$id/edit
+* delete existing contact [here](http://localhost:8080/contacts-service/contacts/$id/delete) (replace $id with entity id)
+    * http://localhost:8080/contacts-service/contacts/$id/delete
 * search by query parameter [here](http://localhost:8080/contacts-service/contacts/search)
     * firstName
     * lastName
